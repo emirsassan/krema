@@ -1,11 +1,20 @@
 {
   "name": "krema",
-  "module": "index.ts",
+  "module": "dist/src/index.js",
   "type": "module",
-  "version": "0.5.3",
+  "version": "0.5.4",
   "bin": {
     "krema": "./dist/bin/krema.js"
   },
+  "exports": {
+    ".": {
+      "import": "./dist/src/index.js",
+      "types": "./dist/src/index.d.ts"
+    }
+  },
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "tsc",
     "prepublish": "npm run build",

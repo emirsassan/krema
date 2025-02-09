@@ -1,5 +1,6 @@
 import { config } from 'dotenv';
 import * as fs from 'fs';
+import { resolve } from 'path';
 
 interface KremaConfig {
   apiKey?: string;
@@ -13,7 +14,7 @@ function loadEnvApiKey(): string | null {
 
 function loadKremaConfig(): KremaConfig {
   try {
-    const configPath = '.kremarc';
+    const configPath = resolve(process.cwd(), '.kremarc');
     if (fs.existsSync(configPath)) {
       const configContent = fs.readFileSync(configPath, 'utf-8');
       return JSON.parse(configContent);

@@ -180,3 +180,4 @@ dist/
 # Custom
 bin/
 krema/
+package-lock.json
