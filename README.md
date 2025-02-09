@@ -39,10 +39,10 @@ Generate type definitions and product information:
 import { generateTypesFromApi } from 'krema';
 
 // Generate types and product information
-await generateTypesFromApi(false, './krema/products.ts');
+await generateTypesFromApi(false, 'krema/generator');
 
 // Use generated types and helpers
-import { getProduct, ProductName } from './krema/products';
+import { getProduct, ProductName } from 'path/to/generated/types';
 
 const product = getProduct('Premium subscription');
 console.log(product.price); // 500
@@ -53,8 +53,8 @@ console.log(product.price); // 500
 Create checkout sessions for products:
 
 ```typescript
-import { createCheckoutSession } from 'krema';
-import { getProduct } from './krema/products';
+import { createCheckoutSession } from 'krema/checkout';
+import { getProduct } from 'path/to/generated/types';
 
 const session = await createCheckoutSession({
   product_id: getProduct('Premium subscription').id,
@@ -67,7 +67,7 @@ console.log(session.checkout_url);
 ### License Management
 
 ```typescript
-import { activateLicense, validateLicense, deactivateLicense } from 'krema';
+import { activateLicense, validateLicense, deactivateLicense } from 'krema/license';
 
 // Activate a license
 await activateLicense('license_key', 'instance_name');
@@ -84,7 +84,7 @@ await deactivateLicense('license_key', 'instance_id');
 Create and manage discount codes:
 
 ```typescript
-import { createDiscountCode } from 'krema';
+import { createDiscountCode } from 'krema/discount';
 
 // Create a percentage discount
 await createDiscountCode({
