@@ -36,10 +36,10 @@ CREEM_API_KEY=your_api_key_here
 Generate type definitions and product information:
 
 ```typescript
-import { generateTypesFromApi } from 'krema';
+import { generateTypesFromApi } from 'krema/generator';
 
 // Generate types and product information
-await generateTypesFromApi(false, 'krema/generator');
+await generateTypesFromApi(false, 'path/to/generated/types');
 
 // Use generated types and helpers
 import { getProduct, ProductName } from 'path/to/generated/types';
