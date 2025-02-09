@@ -36,7 +36,7 @@ CREEM_API_KEY=your_api_key_here
 Generate type definitions and product information:
 
 ```typescript
-import { generateTypesFromApi } from 'krema/generator';
+import { generateTypesFromApi } from 'krema';
 
 // Generate types and product information
 await generateTypesFromApi(false, 'path/to/generated/types');
@@ -53,7 +53,7 @@ console.log(product.price); // 500
 Create checkout sessions for products:
 
 ```typescript
-import { createCheckoutSession } from 'krema/checkout';
+import { createCheckoutSession } from 'krema';
 import { getProduct } from 'path/to/generated/types';
 
 const session = await createCheckoutSession({
@@ -67,7 +67,7 @@ console.log(session.checkout_url);
 ### License Management
 
 ```typescript
-import { activateLicense, validateLicense, deactivateLicense } from 'krema/license';
+import { activateLicense, validateLicense, deactivateLicense } from 'krema';
 
 // Activate a license
 await activateLicense('license_key', 'instance_name');
@@ -84,7 +84,7 @@ await deactivateLicense('license_key', 'instance_id');
 Create and manage discount codes:
 
 ```typescript
-import { createDiscountCode } from 'krema/discount';
+import { createDiscountCode } from 'krema';
 
 // Create a percentage discount
 await createDiscountCode({
