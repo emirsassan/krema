@@ -1,10 +1,15 @@
 import axios from "axios";
 import { getApiKey, getMode } from "../config";
+import type {
+  ActivateLicenseResponse,
+  ValidateLicenseResponse,
+  DeactivateLicenseResponse
+} from './types';
 
 export async function activateLicense(
   licenseKey: string,
   instanceName: string
-) {
+): Promise<ActivateLicenseResponse> {
   const testMode = getMode();
 
   const response = await axios.post(
@@ -28,7 +33,7 @@ export async function activateLicense(
 export async function validateLicense(
   licenseKey: string,
   instanceId: string
-) {
+): Promise<ValidateLicenseResponse> {
   const testMode = getMode();
 
   const response = await axios.post(
@@ -52,7 +57,7 @@ export async function validateLicense(
 export async function deactivateLicense(
   licenseKey: string,
   instanceId: string
-) {
+): Promise<DeactivateLicenseResponse> {
   const testMode = getMode();
 
   const response = await axios.post(

@@ -2,7 +2,7 @@
   "name": "krema",
   "module": "dist/src/index.js",
   "type": "module",
-  "version": "0.5.8",
+  "version": "0.5.9",
   "bin": {
     "krema": "./dist/bin/krema.js"
   },
