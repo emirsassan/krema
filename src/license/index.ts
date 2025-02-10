@@ -9,10 +9,10 @@ import type {
 export async function activateLicense(
   licenseKey: string,
   instanceName: string
-): Promise<ActivateLicenseResponse> {
+) {
   const testMode = getMode();
 
-  const response = await axios.post(
+  const response = await axios.post<ActivateLicenseResponse>(
     testMode
       ? "https://test-api.creem.io/v1/products/search"
       : "https://api.creem.io/v1/products/search",
@@ -33,10 +33,10 @@ export async function activateLicense(
 export async function validateLicense(
   licenseKey: string,
   instanceId: string
-): Promise<ValidateLicenseResponse> {
+) {
   const testMode = getMode();
 
-  const response = await axios.post(
+  const response = await axios.post<ValidateLicenseResponse>(
     testMode
       ? "https://test-api.creem.io/v1/licenses/validate"
       : "https://api.creem.io/v1/licenses/validate",
@@ -57,10 +57,10 @@ export async function validateLicense(
 export async function deactivateLicense(
   licenseKey: string,
   instanceId: string
-): Promise<DeactivateLicenseResponse> {
+) {
   const testMode = getMode();
 
-  const response = await axios.post(
+  const response = await axios.post<DeactivateLicenseResponse>(
     testMode
       ? "https://test-api.creem.io/v1/licenses/deactivate"
       : "https://api.creem.io/v1/licenses/deactivate",
